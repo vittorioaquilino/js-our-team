@@ -47,14 +47,6 @@ const team = [
 ];
 
 // stampo con Dot notation 
-// creo un nuovo oggetto 
-const newUser = {
-  name: 'Will Smith',
-  role: 'Actor',
-  image: 'will-smith.jpg'
-}
-team.push(newUser);
-
 let informationElement = "";
 
 for (let i = 0; i < team.length; i++) {
@@ -65,7 +57,15 @@ for (let i = 0; i < team.length; i++) {
     const teamComplete = document.getElementById("information");
     teamComplete.innerHTML += `<img src="img/${informationElement.image}"> <br> ${informationElement.name} <br>  ${informationElement.role} <br> `;
 
+    // al click del bottone aggiungo una persona al team
+    const addNewUser = document.getElementById("addMemberButton");
+    addNewUser.addEventListener("click", function() {
+        const newUser = {
+        name: 'Will Smith',
+        role: 'Actor',
+        image: 'will-smith.jpg'
+        }
+        team.push(newUser);
+    })
 }
-
-// al click del bottone aggiungo una persona al team
 
