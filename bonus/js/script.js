@@ -56,16 +56,19 @@ for (let i = 0; i < team.length; i++) {
     // stampo in html
     const teamComplete = document.getElementById("information");
     teamComplete.innerHTML += `<img src="img/${informationElement.image}"> <br> ${informationElement.name} <br>  ${informationElement.role} <br> `;
-
-    // al click del bottone aggiungo una persona al team
-    const addNewUser = document.getElementById("addMemberButton");
-    addNewUser.addEventListener("click", function() {
-        const newUser = {
-        name: 'Will Smith',
-        role: 'Actor',
-        image: 'will-smith.jpg'
-        }
-        team.push(newUser);
-    })
 }
 
+
+    // al click del bottone aggiungo una persona al team
+const addNewUser = document.getElementById("addMemberButton");
+addNewUser.addEventListener("click", function() {
+    const newUser = {
+    name: 'Will Smith',
+    role: 'Actor',
+    image: 'will-smith.jpg'
+    }
+    console.log('cliccato');
+    team.push(newUser);
+    const newTeam = document.getElementById("information");
+    newTeam.innerHTML += `<img src="img/${newUser.image}`
+})
